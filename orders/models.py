@@ -7,7 +7,7 @@ from catalog.models import Product
 class Order(models.Model):
     session = models.ForeignKey(Session, on_delete=models.CASCADE, related_name='orders')
     full_name = models.CharField(max_length=255)
-    address = models.TextField()
+    address = models.TextField()    
     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
     status = models.CharField(max_length=50, default='paid')
     created_at = models.DateTimeField(auto_now_add=True)
