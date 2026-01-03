@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j(-(j868a3g8*6vx+3@=o#ojwu)^jf!ks&ky1yxe1z@yew1=f!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +41,21 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'users.apps.UsersConfig',
+    
+    'rest_framework'
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "AllowAny"
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication"
+    ],  
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
+}
+    
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
