@@ -20,6 +20,8 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('catalog.urls')),
-    path('', RedirectView.as_view(url='/api/', permanent=False)),
+    path('api/catalog/', include('catalog.urls')), 
+    path('api/cart/', include('cart.urls')),
+    path('api/orders/', include('orders.urls')),
+    path('', RedirectView.as_view(url='/api/catalog/', permanent=False)),
 ]

@@ -2,8 +2,7 @@ from django.db import models
 from django.contrib.sessions.models import Session
 
 from catalog.models import Product
-
-# Create your models here.
+    
 class Order(models.Model):
     session = models.ForeignKey(Session, on_delete=models.CASCADE, related_name='orders')
     full_name = models.CharField(max_length=255)
