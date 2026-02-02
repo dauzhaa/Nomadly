@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from rest_framework import viewsets
+from content.serializers import CulturalMotifSerializer
+from content.models import CulturalMotif
 
-# Create your views here.
+class ContentViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = CulturalMotif.objects.all()
+    serializer_class = CulturalMotifSerializer

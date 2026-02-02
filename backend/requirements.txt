@@ -7,3 +7,4 @@ redis==7.1.0
 sqlparse==0.5.5
 python-dotenv
 Pillow
+drf-spectacular==0.27.1 

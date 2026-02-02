@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import CulturalMotif
 
-# Register your models here.
+@admin.register(CulturalMotif)
+class CulturalMotifAdmin(admin.ModelAdmin):
+    list_display = ['name', 'region']
