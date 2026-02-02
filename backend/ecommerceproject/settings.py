@@ -159,21 +159,4 @@ REST_FRAMEWORK = {
 }
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler', 
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': 'django_errors.log',
-            'level': 'ERROR',
-        },
-    },
-    'root': {
-        'handlers': ['console', 'file'],
-        'level': 'INFO',
-    },
-}
+AUTH_USER_MODEL = 'users.User'
